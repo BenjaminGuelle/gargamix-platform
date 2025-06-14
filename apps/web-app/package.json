@@ -10,7 +10,8 @@
     "build:prod": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
     "check-types": "npx tsc --noEmit",
     "serve:pwa": "npx serve dist/web-app/browser -s -l 4201"
   },
@@ -29,7 +30,8 @@
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.10",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.0",
+    "@gargamix/eslint-config": "workspace:*"
   },
   "devDependencies": {
     "@angular/build": "^20.0.2",

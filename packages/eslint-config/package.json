@@ -1,0 +1,17 @@
+{
+  "name": "@gargamix/eslint-config",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "@angular-eslint/eslint-plugin": "^18.4.1",
+    "@angular-eslint/eslint-plugin-template": "^18.4.1",
+    "@angular-eslint/template-parser": "^18.4.1",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
+    "eslint": "^9.18.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-plugin-prefer-arrow": "^1.2.3"
+  }
+}

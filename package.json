@@ -7,7 +7,8 @@
     "dev": "turbo run dev",
     "dev:admin": "turbo run dev --filter=admin-app",
     "dev:web": "turbo run dev --filter=web-app",
-    "lint": "turbo run lint",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "test": "turbo run test",
@@ -17,15 +18,24 @@
     "clean": "turbo run clean && rm -rf node_modules/.cache"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^20.0.2",
+    "@angular/cli": "^20.0.2",
     "prettier": "^3.5.3",
     "turbo": "^2.5.4",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "firebase": "^11.9.1"
+    "@angular/common": "^20.0.3",
+    "@angular/core": "^20.0.3",
+    "@angular/forms": "^20.0.3",
+    "@angular/platform-browser": "^20.0.3",
+    "@angular/platform-browser-dynamic": "^20.0.3",
+    "@angular/router": "^20.0.3",
+    "firebase": "^11.9.1",
+    "zone.js": "^0.15.1"
   }
 }

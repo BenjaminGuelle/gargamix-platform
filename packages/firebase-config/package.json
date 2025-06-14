@@ -1,0 +1,14 @@
+{
+  "name": "@gargamix/firebase-config",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "firebase": "latest",
+    "rxjs": "latest"
+  },
+  "peerDependencies": {
+    "@angular/core": "^20.0.0"
+  }
+}
