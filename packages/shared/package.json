@@ -1,0 +1,10 @@
+{
+  "name": "@gargamix/shared",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "firebase": "^11.9.1"
+  }
+}

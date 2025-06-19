@@ -63,7 +63,9 @@ module.exports = [
             // Code quality
             'prefer-arrow/prefer-arrow-functions': 'error',
             'no-console': ['warn', { allow: ['warn', 'error'] }],
-            'no-debugger': 'error'
+            'no-debugger': 'error',
+
+            "quotes": ["error", "single"],
         }
     },
     {

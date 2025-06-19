@@ -1,22 +1,27 @@
 {
   "name": "functions",
   "scripts": {
-    "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "serve": "npm run build && firebase emulators:start --only functions",
-    "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
+    "serve": "pnpm run build && firebase emulators:start --only functions,auth,firestore,storage",
+    "shell": "pnpm run build && firebase functions:shell",
+    "start": "pnpm run shell",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
   "engines": {
     "node": "22"
   },
-  "main": "lib/index.js",
+  "main": "lib/functions/src/index.js",
   "dependencies": {
+    "@gargamix/eslint-config": "workspace:*",
+    "@gargamix/shared": "workspace:*",
+    "@google-cloud/storage": "^7.16.0",
     "firebase-admin": "^12.7.0",
-    "firebase-functions": "^6.3.2"
+    "firebase-functions": "^6.3.2",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.1",

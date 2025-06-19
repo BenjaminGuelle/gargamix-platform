@@ -31,7 +31,9 @@
     "tailwindcss": "^4.1.10",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0",
-    "@gargamix/eslint-config": "workspace:*"
+    "@gargamix/eslint-config": "workspace:*",
+    "@gargamix/shared": "workspace:*",
+    "@gargamix/firebase-config": "workspace:*"
   },
   "devDependencies": {
     "@angular/build": "^20.0.2",

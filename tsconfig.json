@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2017",
+    "module": "ESNext",
+    "lib": [
+      "ES2018",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "paths": {
+      "@gargamix/shared": ["./packages/shared/index.ts"],
+      "@gargamix/shared/*": ["./packages/shared/*"],
+      "@gargamix/firebase-config": ["./packages/firebase-config/index.ts"],
+      "@gargamix/firebase-config/*": ["./packages/firebase-config/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
