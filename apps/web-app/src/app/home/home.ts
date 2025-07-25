@@ -1,16 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [
+    ReactiveFormsModule,
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
-  router = inject(Router);
-
-  goToAuth() {
-    this.router.navigate(['/auth']);
-  }
 }

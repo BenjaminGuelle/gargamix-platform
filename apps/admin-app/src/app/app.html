@@ -1,3 +1,29 @@
-<div class="w-screen h-screen flex justify-center items-center ">
+<div class="w-screen h-screen p-10">
     <p>Hello world</p>
+    <div class="flex flex-col space-y-4">
+        <button hlmBtn [size]="'sm'">Button</button>
+        <button hlmBtn [size]="'default'">Button</button>
+        <button hlmBtn [size]="'lg'" class="text-destructive-foreground">
+            <ng-icon hlm size="sm" class="mr-2 !text-white" name="lucideMail" />
+            Login with Email
+        </button>
+        <button hlmBtn [size]="'icon'" >
+            <ng-icon hlm size='sm' class="!text-white" name="lucideChevronRight"/>
+        </button>
+        <button hlmBtn [variant]="'ghost'" [size]="'sm'">Button</button>
+        <button hlmBtn [variant]="'link'">Button</button>
+        <button hlmBtn [variant]="'outline'">Button</button>
+        <button hlmBtn [variant]="'secondary'">Button</button>
+        <button hlmBtn [variant]="'destructive'">Button</button>
+    </div>
+    <hlm-form-field>
+        <label hlmLabel [error]="'auto'">E-Mail
+            <input required class='w-80' hlmInput type='email' placeholder='Email'/>
+        </label>
+    </hlm-form-field>
+    <hlm-form-field>
+        <label hlmLabel [error]="'auto'">E-Mail
+            <input [size]="'lg'" required class='w-80' hlmInput type='email' placeholder='Email'/>
+        </label>
+    </hlm-form-field>
 </div>

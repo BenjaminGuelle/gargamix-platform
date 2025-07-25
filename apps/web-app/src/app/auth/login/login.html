@@ -1,0 +1,44 @@
+@if (form) {
+    <form [formGroup]="form" class="w-full flex flex-col space-y-4 mb-10">
+
+        <mijo-form-item [hint]="'Entrez votre adresse e-mail pour vous connecter'">
+            <mijo-form-label required>Email</mijo-form-label>
+            <mijo-form-control>
+                <input mijoInput formControlName="email" placeholder="ex : moi@email.com">
+            </mijo-form-control>
+        </mijo-form-item>
+
+        <mijo-form-item [hint]="'Le mot de passe doit contenir au moins 8 caractères'">
+            <mijo-form-label required>Mot de passe</mijo-form-label>
+            <mijo-form-control>
+                <input mijoInput formControlName="password" [type]="visibilityPass() ? 'text' : 'password'" placeholder="Votre mot de passe">
+                <mijo-button mijoSuffix [variant]="'link'" [size]="'input'" (click)="togglePass()">
+                    <i [name]="visibilityPass() ? 'eye' : 'eye_off'" class="w-4 h-4 mr-2"></i>
+                </mijo-button>
+            </mijo-form-control>
+        </mijo-form-item>
+
+        <mijo-button [variant]="'secondary'" [size]="'sm'" (click)="loginWithEmailAndPassword()">
+            Se connecter à Mijotello
+        </mijo-button>
+
+    </form>
+
+    <div class="w-full flex justify-center items-center mb-6">
+        <div class="flex-1 border-t border-neutral-300"></div>
+        <p class="text-sm px-4 whitespace-nowrap text-muted-foreground">Ou connectez-vous avec</p>
+        <div class="flex-1 border-t border-neutral-300"></div>
+    </div>
+
+    <mijo-button [variant]="'outline'" [size]="'lg'" (click)="loginWithGoogle()">
+        <i [name]="'google'" class="w-6 h-6"></i>
+        Continuer avec Google
+    </mijo-button>
+
+    <div class="flex justify-center items-center mt-10 gap-1">
+        <p class="text-xs text-muted-foreground">Pas encore de compte ?</p>
+        <mijo-button [variant]="'link'" [size]="'lg'" routerLink="/auth/inscription">
+            Créer un compte
+        </mijo-button>
+    </div>
+}

@@ -14,9 +14,9 @@ export interface UserPrivateModel {
 }
 
 export type UserRole =
-  | 'VISITOR'    // Compte créé, peut être onboardé ou non
-  | 'PREMIUM'    // Abonnement payant
-  | 'FREE'  // acces PREMIUM à 0€
-  | 'MODERATOR'  // Modération
-  | 'ADMIN';     // Administration
+  | 'VISITOR'     // Compte créé, peut être onboardé ou non
+  | 'PREMIUM'     // Abonnement payant
+  | 'FREE'        // acces PREMIUM à 0€
+  | 'MODERATOR'   // Modération
+  | 'ADMIN';      // Administration
 ;

@@ -1,4 +1,4 @@
-import { computed, effect, inject, Injectable, resource, signal } from '@angular/core';
+import { computed, effect, inject, Injectable, resource, Signal, signal } from '@angular/core';
 import {
   onAuthStateChanged,
   Auth,
@@ -14,7 +14,7 @@ import {
   CreateUserRequest,
   parseFirebaseAuthError,
   UserPrivateModel,
-  UserPublicModel,
+  UserPublicModel, UserRole,
 } from '@gargamix/shared';
 import { CallerService } from './caller.service';
 
@@ -50,6 +50,22 @@ export class AuthService {
     },
     defaultValue: null,
   });
+
+  userClaims = resource({
+    params: () => this.firebaseUser(),
+    loader: async ({ params }) => {
+      if (!params) {
+        return null;
+      }
+      const tokenResult = await params.getIdTokenResult();
+      return tokenResult.claims;
+    },
+    defaultValue: null,
+  });
+
+  readonly currentUserRoles: Signal<UserRole[]> = computed<UserRole[]>(() =>
+    (this.userClaims?.value()?.['roles'] as UserRole[]) || ['VISITOR'],
+  );
 
   user = computed(() => this.userResource.value());
   userPrivate = computed(() => this.userPrivateResource.value());
@@ -97,6 +113,15 @@ export class AuthService {
         loading: state.isLoading,
       });
     });
+  }
+
+  hasRole(role: UserRole): boolean {
+    return this.currentUserRoles().includes(role);
+  }
+
+  hasAnyRole(roles: UserRole[]): boolean {
+    const userRoles = this.currentUserRoles();
+    return roles.some(role => userRoles.includes(role));
   }
 
   loginWithGoogle() {

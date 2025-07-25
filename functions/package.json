@@ -6,8 +6,6 @@
     "serve": "pnpm run build && firebase emulators:start --only functions,auth,firestore,storage",
     "shell": "pnpm run build && firebase functions:shell",
     "start": "pnpm run shell",
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
@@ -16,7 +14,6 @@
   },
   "main": "lib/functions/src/index.js",
   "dependencies": {
-    "@gargamix/eslint-config": "workspace:*",
     "@gargamix/shared": "workspace:*",
     "@google-cloud/storage": "^7.16.0",
     "firebase-admin": "^12.7.0",
@@ -24,6 +21,7 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@gargamix/eslint-config": "workspace:*",
     "@types/node": "^24.0.1",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",

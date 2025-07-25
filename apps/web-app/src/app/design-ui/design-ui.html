@@ -1,0 +1,92 @@
+<div class="p-10 flex gap-10">
+
+    <div class="flex flex-col space-y-4">
+
+        <mijo-button [variant]="'secondary'" [size]="'lg'" [loading]="false" (click)="goToAuth()">
+            navigue to auth
+            <i [name]="'eye'" class="w-4 h-4"></i>
+        </mijo-button>
+
+        <p>SIZE</p>
+        <mijo-button [variant]="'secondary'" [size]="'lg'" [loading]="true">
+            navigue to auth
+        </mijo-button>
+        <mijo-button [variant]="'secondary'" [loading]="true">
+            navigue to auth
+        </mijo-button>
+        <mijo-button [variant]="'secondary'" [size]="'sm'" [loading]="true">
+            navigue to auth
+        </mijo-button>
+        <mijo-button [variant]="'secondary'" [size]="'icon'" [loading]="false">
+            <i [name]="'eye'" class="w-4 h-4"></i>
+        </mijo-button>
+        <p>VARIANT</p>
+        <mijo-button [variant]="'primary'" [size]="'lg'" [loading]="true" [disable]="false">
+            primary
+        </mijo-button>
+        <mijo-button [variant]="'secondary'" [size]="'lg'" [loading]="false">
+            secondary
+        </mijo-button>
+        <mijo-button [variant]="'destructive'" [size]="'lg'" [loading]="false">
+            destructive
+        </mijo-button>
+        <mijo-button [variant]="'default'" [size]="'lg'" [loading]="false">
+            default
+        </mijo-button>
+        <mijo-button [variant]="'outline'" [size]="'lg'" [loading]="false">
+            outline
+        </mijo-button>
+        <mijo-button [variant]="'link'" [size]="'lg'" [loading]="false">
+            link
+        </mijo-button>
+        <mijo-button [variant]="'ghost'" [size]="'lg'" [loading]="false">
+            ghost
+        </mijo-button>
+    </div>
+    @if (form) {
+        <form [formGroup]="form" class="flex flex-1 flex-col space-y-4">
+            <h2>FORM</h2>
+
+            <mijo-form-item [hint]="'votre prénom ici'">
+                <mijo-form-label required>Prénom</mijo-form-label>
+                <mijo-form-control>
+                    <input mijoInput formControlName="firstName" placeholder="mon prénom">
+                </mijo-form-control>
+            </mijo-form-item>
+
+            <mijo-form-item [hint]="'votre nom ici'">
+                <mijo-form-label required>Nom</mijo-form-label>
+                <mijo-form-control>
+                    <input mijoInput formControlName="lastName" placeholder="mon nom">
+                </mijo-form-control>
+            </mijo-form-item>
+
+            <mijo-form-item [hint]="'votre email ici'">
+                <mijo-form-label required>Email</mijo-form-label>
+                <mijo-form-control>
+                    <input mijoInput type="email" formControlName="email" placeholder="mon email ici">
+                    <mijo-button mijoPrefix [variant]="'link'" [size]="'input'" [loading]="false">
+                        <i [name]="'eye'" class="w-4 h-4 ml-2"></i>
+                    </mijo-button>
+                </mijo-form-control>
+            </mijo-form-item>
+
+            <mijo-button [variant]="'secondary'" [size]="'sm'" (click)="submit()">
+                Valider
+            </mijo-button>
+
+        </form>
+    }
+</div>
+
+<ng-template #errorTpl let-control>
+    @if (control.hasError('required')) {
+        Ce champ est obligatoire
+    }
+    @if (control.hasError('minlength')) {
+        Ce champ doit être renseigné avec 2 caractères obligatoirement.
+    }
+    @if (control.hasError('pattern')) {
+        Ce champ doit être renseigné avec un email valide.
+    }
+</ng-template>

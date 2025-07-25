@@ -1,4 +1,18 @@
-<div class="bg-background w-screen h-screen">
-    <h2>Gargamix</h2>
-    <input >
+<div class="w-screen h-screen flex">
+
+    <section class="hidden md:block w-1/2 bg-background-subtle"></section>
+
+    <section class="w-full md:w-1/2 flex justify-center items-center px-10">
+        <div class="w-full md:max-w-96">
+            <div class="flex items-center gap-2 mb-34 mx-auto">
+                <div class="w-12 h-12 flex justify-center items-center rounded-full bg-secondary">
+                    <i name="chefHat" class="w-11 h-11"></i>
+                </div>
+                <h2 class="font-bold text-4xl">Mijotello</h2>
+            </div>
+
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+
 </div>

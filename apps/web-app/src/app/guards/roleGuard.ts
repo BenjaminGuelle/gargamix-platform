@@ -1,26 +1,16 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { UserRole } from '@gargamix/shared';
 import { AuthService } from '@gargamix/firebase-config';
+import { UserRole } from '@gargamix/shared';
 
-const ROLE_HIERARCHY: UserRole[] = ['VISITOR', 'FREE', 'PREMIUM', 'MODERATOR', 'ADMIN'];
-
-export const requireMinRole = (minRole: UserRole): CanActivateFn => {
+export const requireRole = (requiredRole: UserRole): CanActivateFn => {
   return () => {
-    const authService = inject(AuthService);
-    const router = inject(Router);
+    const authService: AuthService = inject(AuthService);
+    const router: Router = inject(Router);
 
-    const userRole = authService.userPrivate()?.role;
+    const userRoles: UserRole[] = authService.currentUserRoles();
 
-    if (!userRole) {
-      router.navigate(['/auth']);
-      return false;
-    }
-
-    const userRoleIndex = ROLE_HIERARCHY.indexOf(userRole);
-    const minRoleIndex = ROLE_HIERARCHY.indexOf(minRole);
-
-    if (userRoleIndex < minRoleIndex) {
+    if (!userRoles.includes(requiredRole)) {
       router.navigate(['/unauthorized']);
       return false;
     }
@@ -29,14 +19,16 @@ export const requireMinRole = (minRole: UserRole): CanActivateFn => {
   };
 };
 
-export const requireExactRoles = (allowedRoles: UserRole[]): CanActivateFn => {
+export const requireAnyRole = (allowedRoles: UserRole[]): CanActivateFn => {
   return () => {
     const authService = inject(AuthService);
     const router = inject(Router);
 
-    const userRole = authService.userPrivate()?.role;
+    const userRoles: UserRole[] = authService.currentUserRoles();
 
-    if (!userRole || !allowedRoles.includes(userRole)) {
+    const hasAnyRole = userRoles.some(role => allowedRoles.includes(role));
+
+    if (!hasAnyRole) {
       router.navigate(['/unauthorized']);
       return false;
     }

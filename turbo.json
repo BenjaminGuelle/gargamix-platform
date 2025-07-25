@@ -7,6 +7,10 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", "!dist/cache/**"]
     },
+    "build:lib": {
+      "outputs": ["dist/**"],
+      "inputs": ["components/**", "index.ts", "*.json"]
+    },
     "build:prod": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
