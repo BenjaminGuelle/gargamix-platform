@@ -5,6 +5,7 @@ import { Home } from './home/home';
 import { Unauthorized } from './unauthorized/unauthorized';
 import { DesignUi } from './design-ui/design-ui';
 import { Layout } from './components/layout/layout';
+import { requireAnyRole } from './guards/roleGuard';
 
 // Guards (à importer quand prêts)
 // import { requireAnyRole } from './shared/guards/role.guard';
@@ -23,6 +24,19 @@ export const routes: Routes = [
       // === ROUTES PUBLIQUES (VISITOR accessible) ===
       {
         path: 'home',
+        component: Home,
+      },
+      {
+        path: 'recettes',
+        component: Home,
+      },
+      {
+        path: 'groups',
+        component: Home,
+        canActivate: [requireAnyRole(['FREE', 'PREMIUM', 'ADMIN'])],
+      },
+      {
+        path: 'profile',
         component: Home,
       },
 

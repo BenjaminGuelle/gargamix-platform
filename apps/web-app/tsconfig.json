@@ -12,53 +12,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
-    "paths": {
-      "@spartan-ng/helm/avatar": [
-        "./src/app/components/ui/ui-avatar-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/badge": [
-        "./src/app/components/ui/ui-badge-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/button": [
-        "./src/app/components/ui/ui-button-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/card": [
-        "./src/app/components/ui/ui-card-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/checkbox": [
-        "./src/app/components/ui/ui-checkbox-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/date-picker": [
-        "./src/app/components/ui/ui-date-picker-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/dialog": [
-        "./src/app/components/ui/ui-dialog-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/form-field": [
-        "./src/app/components/ui/ui-form-field-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/hover-card": [
-        "./src/app/components/ui/ui-hover-card-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/icon": [
-        "./src/app/components/ui/ui-icon-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/input": [
-        "./src/app/components/ui/ui-input-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/label": [
-        "./src/app/components/ui/ui-label-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/tooltip": [
-        "./src/app/components/ui/ui-tooltip-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/typography": [
-        "./src/app/components/ui/ui-typography-helm/src/index.ts"
-      ],
-      "@spartan-ng/helm/select": [
-        "./src/app/components/ui/ui-select-helm/src/index.ts"
-      ]
-    }
+    "paths": {}
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
