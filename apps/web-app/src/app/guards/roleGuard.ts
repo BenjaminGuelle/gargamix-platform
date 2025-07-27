@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '@gargamix/firebase-config';
 import { UserRole } from '@gargamix/shared';
+import {AuthService} from '@gargamix/firebase-services';
 
 export const requireRole = (requiredRole: UserRole): CanActivateFn => {
   return () => {

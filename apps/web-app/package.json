@@ -28,6 +28,7 @@
     "@angular/service-worker": "^20.0.0",
     "@gargamix/eslint-config": "workspace:*",
     "@gargamix/firebase-config": "workspace:*",
+    "@gargamix/firebase-services": "workspace:*",
     "@gargamix/shared": "workspace:*",
     "@ng-icons/core": "^29.10.0",
     "@ng-icons/lucide": ">=29.0.0",

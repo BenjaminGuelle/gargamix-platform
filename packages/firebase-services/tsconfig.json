@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./dist",
+    "baseUrl": "../../",
+    "paths": {
+      "@gargamix/shared": ["packages/shared/index.ts"],
+      "@gargamix/shared/*": ["packages/shared/*"],
+      "@gargamix/firebase-config": ["packages/firebase-config/index.ts"],
+      "@gargamix/firebase-config/*": ["packages/firebase-config/*"]
+    }
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -3,8 +3,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { DeviceService } from '../../services/device-service';
 import { LayoutService } from '../../services/layout-service';
 import { UserRole } from '@gargamix/shared';
-import { AuthService } from '@gargamix/firebase-config';
 import { IconDirective } from '../ui/icon/icon.directive';
+import {AuthService} from '@gargamix/firebase-services';
 
 interface NavigationItem {
   id: string;

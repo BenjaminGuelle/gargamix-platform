@@ -1,5 +1,5 @@
 {
-  "name": "@gargamix/firebase-config",
+  "name": "@gargamix/firebase-services",
   "version": "0.0.1",
   "private": true,
   "main": "./dist/index.js",
@@ -16,7 +16,14 @@
     }
   },
   "dependencies": {
-    "firebase": "^11.9.1"
+    "firebase": "^11.9.1",
+    "rxjs": "^7.8.0",
+    "@angular/fire": "^20.0.1",
+    "@gargamix/shared": "workspace:*",
+    "@gargamix/firebase-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "@angular/core": "^20.0.0"
   },
   "devDependencies": {
     "typescript": "^5.8.3"

@@ -9,14 +9,15 @@ import {
 } from '@angular/fire/auth';
 import { FirestoreService } from './firestore.service';
 import { catchError, firstValueFrom, from, map, of, switchMap, take, tap, throwError } from 'rxjs';
+import { CallerService } from './caller.service';
 import {
   AuthStateModel,
   CreateUserRequest,
   parseFirebaseAuthError,
   UserPrivateModel,
-  UserPublicModel, UserRole,
-} from '@gargamix/shared';
-import { CallerService } from './caller.service';
+  UserPublicModel,
+  UserRole
+} from "@gargamix/shared";
 
 @Injectable({
   providedIn: 'root',

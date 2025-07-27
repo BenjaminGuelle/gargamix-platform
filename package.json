@@ -6,18 +6,14 @@
     "build:prod": "turbo run build:prod",
     "build:libs": "turbo run build --filter='@gargamix/*'",
     "build:firebase": "turbo run build --filter=@gargamix/firebase-config",
-
     "dev": "turbo run dev",
     "dev:admin": "turbo run dev --filter=admin-app",
     "dev:web": "turbo run dev --filter=web-app",
     "dev:libs": "turbo run dev --filter='@gargamix/*'",
     "dev:firebase": "turbo run dev --filter=@gargamix/firebase-config",
-
     "dev:full": "concurrently \"pnpm dev:libs\" \"pnpm dev:web\"",
-
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
-
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "test": "turbo run test",
@@ -42,6 +38,7 @@
   "dependencies": {
     "@angular/common": "^20.0.3",
     "@angular/core": "^20.0.3",
+    "@angular/fire": "^20.0.1",
     "@angular/forms": "^20.0.3",
     "@angular/platform-browser": "^20.0.3",
     "@angular/platform-browser-dynamic": "^20.0.3",
